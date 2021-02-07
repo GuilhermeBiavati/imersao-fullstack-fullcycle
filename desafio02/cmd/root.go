@@ -21,6 +21,9 @@ import (
 
 	"github.com/spf13/cobra"
 
+	consumer "github.com/GuilhermeBiavati/imersao-fullstack-fullcycle/desafio02/consumer"
+	producer "github.com/GuilhermeBiavati/imersao-fullstack-fullcycle/desafio02/producer"
+
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
 )
@@ -40,7 +43,8 @@ to quickly create a Cobra application.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	Run: func(cmd *cobra.Command, args []string) {
-		co
+		go consumer.InitConsumer()
+		producer.InitProducer()
 	},
 }
 
