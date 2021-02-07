@@ -21,8 +21,8 @@ import (
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
 
-	consumer "github.com/mateusjbarbosa/imersao-fullstack-fullcycle/desafio-2/consumer"
-	producer "github.com/mateusjbarbosa/imersao-fullstack-fullcycle/desafio-2/producer"
+	consumer "github.com/GuilhermeBiavati/imersao-fullstack-fullcycle/desafio02/consumer"
+	producer "github.com/GuilhermeBiavati/imersao-fullstack-fullcycle/desafio02/producer"
 )
 
 var cfgFile string
