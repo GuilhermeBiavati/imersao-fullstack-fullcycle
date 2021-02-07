@@ -1,9 +1,12 @@
 /*
 Copyright © 2021 NAME HERE <EMAIL ADDRESS>
+
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
+
     http://www.apache.org/licenses/LICENSE-2.0
+
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,20 +23,24 @@ import (
 
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
-
-	consumer "github.com/GuilhermeBiavati/imersao-fullstack-fullcycle/desafio02/consumer"
-	producer "github.com/GuilhermeBiavati/imersao-fullstack-fullcycle/desafio02/producer"
 )
 
 var cfgFile string
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "desafio-2",
-	Short: "Use Desafio-2 to simulate a Apache Kafka comunication",
+	Use:   "desafio02",
+	Short: "A brief description of your application",
+	Long: `A longer description that spans multiple lines and likely contains
+examples and usage of using your application. For example:
+
+Cobra is a CLI library for Go that empowers applications.
+This application is a tool to generate the needed files
+to quickly create a Cobra application.`,
+	// Uncomment the following line if your bare application
+	// has an action associated with it:
 	Run: func(cmd *cobra.Command, args []string) {
-		go consumer.InitConsumer()
-		producer.InitProducer()
+		co
 	},
 }
 
@@ -53,7 +60,7 @@ func init() {
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
 
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.desafio-2.yaml)")
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.desafio02.yaml)")
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
@@ -73,9 +80,9 @@ func initConfig() {
 			os.Exit(1)
 		}
 
-		// Search config in home directory with name ".desafio-2" (without extension).
+		// Search config in home directory with name ".desafio02" (without extension).
 		viper.AddConfigPath(home)
-		viper.SetConfigName(".desafio-2")
+		viper.SetConfigName(".desafio02")
 	}
 
 	viper.AutomaticEnv() // read in environment variables that match
